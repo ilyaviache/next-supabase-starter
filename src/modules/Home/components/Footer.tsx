@@ -12,7 +12,7 @@ function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-          Powered by{' '}
+          Deploy to{' '}
         <span className={styles.logo}>
           <IconVercel fill="currentColor" width={72} height={16} />
         </span>
