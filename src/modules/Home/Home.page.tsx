@@ -1,12 +1,12 @@
 import Footer from '@/modules/Home/components/Footer';
-import JokeList from '@/modules/Joke/components/JokeList';
+import { HomePageProps } from '@/modules/Home/Home.types';
 import Image from '@/packages/components/base/Images/Image';
 import ButtonLink from '@/packages/components/base/Navigations/ButtonLink';
-import NextLink from '@/packages/components/base/Navigations/NextLink';
 
 import styles from './Home.page.module.css';
 
-function HomePage() {
+const HomePage: React.FC<HomePageProps> = ({ githubStars, testData }) => {
+  console.log('props', githubStars, testData);
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -23,26 +23,16 @@ function HomePage() {
           wrapperClassName="mt-10 max-w-full -mb-10 rounded"
         />
 
-        <p className={styles.description}>
-          Visit the demo API{' '}
-          <NextLink href="/api/jokes">
-            <code className={styles.code}>/api/jokes</code>
-          </NextLink>
-        </p>
-
         <ButtonLink className="bg-fuchsia-400 text-center mt-5" href="/about?text=Hello%20World">
           About Page
         </ButtonLink>
 
         <hr className="w-full max-w-lg my-8" />
-
-        {/* Example calling Server Component inside Server Component */}
-        <JokeList />
       </main>
 
       <Footer />
     </div>
   );
-}
+};
 
 export default HomePage;
